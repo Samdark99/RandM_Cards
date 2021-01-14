@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "RandM-Cards"
+  "defaultProject": "RandM-Cards",
+  "cli": {
+    "analytics": false
+  }
 }
