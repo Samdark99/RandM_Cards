@@ -1,11 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { apiUrl } from '../constants/url';
+import { CharacterResults } from '../core/characters';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritesService {
 
-  constructor() { }
+  //Variables
+  characters!: CharacterResults[];
+
+  constructor(private http: HttpClient) { }
+
+  getFavorites(ids: string){
+    return this.http.get<any>(`${apiUrl}/character/${ids}`);
+  }
 
   isFavorite(id: string): boolean{
     if(localStorage.getItem('fav')){

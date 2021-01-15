@@ -56,17 +56,14 @@ export class MainComponent implements OnInit {
   }
 
   //Favorite Characters
-  isFavorite(){
-    if(this.fav){
-      return true;
-    } else{
-      return false;
-    }
+  isFavorite(id: number){
+    let convertId = id.toString();
+    return this.favoritesService.isFavorite(convertId);
   }
 
-  addFavorite(id: number){
-    let newId = id.toString();
-    this.favoritesService.addOrDeleteFavorite(newId);
+  addOrDeleteFavorite(id: number){
+    let convertId = id.toString();
+    this.favoritesService.addOrDeleteFavorite(convertId);
   }
 
   //Pagination

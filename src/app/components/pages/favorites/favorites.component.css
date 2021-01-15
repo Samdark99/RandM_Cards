@@ -15,20 +15,13 @@ img{
     margin-bottom: 0;
 }
 
+.fas{
+    color: yellow;
+}
+
 .fav{
     position: absolute;
     top: 0.313rem;
     right: 0.313rem;
     cursor: pointer;
 }
-
-.fas.fa-star{
-    color: yellow;
-}
-
-/* .fad{
-    position: absolute;
-    bottom: 0.313rem;
-    right: 0.313rem;
-    cursor: pointer;
-} */
