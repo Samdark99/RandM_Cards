@@ -1,1 +1,36 @@
-<p>detail works!</p>
+<i *ngIf="!isFavorite()" (click)="addOrDeleteFavorite(character.id)" class="far fa-star fav"></i>
+<i *ngIf="isFavorite()" (click)="addOrDeleteFavorite(character.id)" class="fas fa-star fav"></i>
+<div *ngIf="character" class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{{character.image}}" alt="{{character.name}}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{character.name}}</h5>
+                <p class="card-text"><small class="text-muted">{{character.status}} - {{character.species}}</small></p>
+                <p class="card-text small-title"><small class="text-muted">Last known location:</small></p>
+                <p class="card-text">{{character.location.name}}</p>
+                <p class="card-text small-title"><small class="text-muted">First seen in:</small></p>
+                <p class="card-text">{{character.episode_data?.name}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <p>Other information</p>
+        <p><b>Type: </b>{{character.type}}</p>
+        <p><b>Gender: </b>{{character.gender}}</p>
+        <p><b>Origin:</b></p>
+        <div class="ps-5">
+            <p><b>Name: </b>{{character.origin.name}}</p>
+            <p><b>Type: </b>{{character.location_data?.type}}</p>
+            <p><b>Dimension: </b>{{character.location_data?.dimension}}</p>
+        </div>
+        <p><b>Location: </b>{{character.location.name}}</p>
+        <p><b>First Episode: </b>{{character.episode_data?.name}}</p>
+        <div class="ps-5">
+            <p><b>Id: </b>{{character.episode_data?.id}}</p>
+            <p><b>Air Date: </b>{{character.episode_data?.air_date}}</p>
+            <p><b>Episode: </b>{{character.episode_data?.episode}}</p>
+            <p><b>Characters that appear in the episode: </b>{{charactersInEpisode}}</p>
+        </div>
+    </div>
+</div>

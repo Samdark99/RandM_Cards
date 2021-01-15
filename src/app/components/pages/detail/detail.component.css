@@ -1,0 +1,25 @@
+.card{
+    margin: 0.5rem;
+    border: 1px solid lightgray;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.small-title{
+    margin-bottom: 0;
+}
+
+.fav{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.563rem;
+    cursor: pointer;
+}
+
+.fas{
+    color: yellow;
+}

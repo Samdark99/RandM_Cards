@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Characters, CharacterResults } from 'src/app/core/characters';
-import { LocationResults } from 'src/app/core/locations';
 import { CharactersService } from 'src/app/services/characters.service';
-import { LocationsService } from 'src/app/services/locations.service';
+import { EpisodesService } from 'src/app/services/episodes.service';
+import { FavoritesService } from 'src/app/services/favorites.service';
 
 @Component({
   selector: 'app-main',
@@ -18,11 +18,13 @@ export class MainComponent implements OnInit {
   totalPages!: number;
   next!: any;
   prev!: any;
+  fav: boolean = false;
   //records: CharacterResults[] = [];
 
 
   constructor(private charactersService: CharactersService,
-              private locationsServices: LocationsService,
+              private episodesService: EpisodesService,
+              private favoritesService: FavoritesService,
               private router: Router) { }
   
   ngOnInit(): void {
@@ -53,7 +55,19 @@ export class MainComponent implements OnInit {
       });
   }
 
-  //Add parameters
+  //Favorite Characters
+  isFavorite(){
+    if(this.fav){
+      return true;
+    } else{
+      return false;
+    }
+  }
+
+  addFavorite(id: number){
+    let newId = id.toString();
+    this.favoritesService.addOrDeleteFavorite(newId);
+  }
 
   //Pagination
   initialRange(): number{

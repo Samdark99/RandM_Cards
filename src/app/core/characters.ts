@@ -1,4 +1,6 @@
+import { EpisodeResults } from "./episodes";
 import { Info } from "./info";
+import { LocationResults } from "./locations";
 
 export interface Characters {
     info: Info;
@@ -14,11 +16,12 @@ export interface CharacterResults {
     gender: string;
     origin: Origin;
     location: Location;
+    location_data?: LocationResults;
     image: string;
     episode: string[];
+    episode_data?: EpisodeResults;
     url: string;
     created: string;
-    page?: string;
 }
 
 export interface Origin {

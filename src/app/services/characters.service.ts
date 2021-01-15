@@ -16,4 +16,8 @@ export class CharactersService {
   getNextPrevPage(urlCharacters: string){
     return this.http.get<any>(`${urlCharacters}`);
   }
+
+  getOneCharacter(id: string){
+    return this.http.get<any>(`${apiUrl}/character/${id}`);
+  }
 }

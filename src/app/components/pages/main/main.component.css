@@ -1,0 +1,23 @@
+.card{
+    display: inline-block;
+    max-width: 35rem;
+    margin: 0.5rem;
+    border: 1px solid lightgray;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.small-title{
+    margin-bottom: 0;
+}
+
+.fav{
+    position: absolute;
+    top: 0.313rem;
+    right: 0.313rem;
+    cursor: pointer;
+}
